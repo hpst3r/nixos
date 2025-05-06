@@ -18,6 +18,9 @@ in
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  
+  # kernel
+  boot.kernelPackages = pkgs.linuxPackages_testing;
 
   networking.hostName = "800g4m0"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
