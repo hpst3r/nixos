@@ -110,7 +110,7 @@ in
   services.flatpak.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.liam = {
+  users.users.wporter = {
     isNormalUser = true;
     description = "William Porter";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -120,7 +120,7 @@ in
     ];
   };
 
-  home-manager.users.liam = { pkgs, ... }: {
+  home-manager.users.wporter = { pkgs, ... }: {
     programs.bash.enable = true;
   
     # GNOME configuration
@@ -157,7 +157,7 @@ in
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
-    polkitPolicyOwners = [ "liam" ];
+    polkitPolicyOwners = [ "wporter" ];
   };
 
   # List packages installed in system profile. To search, run:
