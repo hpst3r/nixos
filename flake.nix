@@ -30,6 +30,8 @@
 	./modules/journald-upload.nix # victorialogs upload
 	./modules/gnome.nix
 	./modules/tailscale.nix
+	./modules/nginx-grafana-vmui.nix
+	./modules/root-cert.nix
 	# ./modules/graylog.nix
       ];
     }; # system
