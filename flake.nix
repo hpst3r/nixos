@@ -29,6 +29,7 @@
 	./modules/victorialogs.nix # victorialogs database
 	./modules/journald-upload.nix # victorialogs upload
 	./modules/gnome.nix
+	./modules/tailscale.nix
 	# ./modules/graylog.nix
       ];
     }; # system
