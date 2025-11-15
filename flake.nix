@@ -1,5 +1,5 @@
 {
-  description = "basic flake";
+  description = "system flake";
 
   inputs = {
     # 25-05 package source
@@ -10,30 +10,57 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # import-tree
+    import-tree.url = "github:vic/import-tree";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, import-tree, ... }@inputs:
     let
-      lib = nixpkgs.lib;
+      
+      mkHost = hostName:
+
+        let
+          system = nixpkgs.lib.strings.trim (
+            builtins.readFile ./modules/hosts/${hostName}/_system
+          );
+        in
+          nixpkgs.lib.nixosSystem {
+
+            inherit system; # import system type from hosts/hostname/system
+
+            specialArgs = { # allow modules to use hostname
+              inherit inputs hostName;
+            };
+
+            modules = [
+
+              # root config
+              ./configuration.nix
+              
+              # hardware config
+              ./modules/hosts/${hostName}/_hardware-configuration.nix
+              
+              # import-tree
+              import-tree
+
+              # home-manager
+              home-manager.nixosModules.home-manager
+
+              # host directory
+              {
+                imports = [( import-tree ./modules/hosts/${hostName} )];
+                networking.hostName = hostName;
+              }
+
+            ]; # system
+      }; # mkHost
+
     in {
-    nixosConfigurations.LittleDude = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./configuration.nix
-	home-manager.nixosModules.home-manager
-	# ./modules/ollama.nix
-	./modules/grafana.nix # grafana service
-	./modules/grafana-config.nix # grafana configuration for Prometheus
-	./modules/prometheus-exporter.nix # prometheus node-exporter
-	./modules/prometheus.nix # prometheus database
-	./modules/victorialogs.nix # victorialogs database
-	./modules/journald-upload.nix # victorialogs upload
-	./modules/gnome.nix
-	./modules/tailscale.nix
-	./modules/nginx-grafana-vmui.nix
-	./modules/root-cert.nix
-	# ./modules/graylog.nix
-      ];
-    }; # system
+      nixosConfigurations = {
+        "Z790"           = mkHost "Z790";
+        "T14G2-PF3LLSSV" = mkHost "T14G2-PF3LLSSV";
+        "9380-BZ4R3X2"   = mkHost "9380-BZ4R3X2";
+      };
   }; # inputs
 } # nix

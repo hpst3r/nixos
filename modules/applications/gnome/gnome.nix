@@ -5,6 +5,11 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
+    [org.gnome.mutter]
+    experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
+  '';
   
   environment.gnome.excludePackages = with pkgs; [
     baobab # disk usage analyzer
@@ -40,6 +45,9 @@
 	  "spotify.desktop"
 	  "org.gnome.Nautilus.desktop"
         ];
+      };
+      "org/gnome/desktop/peripherals/mouse" = {
+        accel-profile = "flat";
       };
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
