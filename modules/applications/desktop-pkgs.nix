@@ -20,12 +20,6 @@
   programs.firefox.enable = true;
   programs.neovim.enable = true;
 
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = [ "wporter" ];
-  };
-
   fonts = {
     packages = with pkgs; [
       inter

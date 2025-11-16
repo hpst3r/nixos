@@ -1,8 +1,9 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
-
-  services.openssh.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
-
+  services.openssh = with lib; {
+    enable = mkDefault true;
+    passwordAuthentication = mkDefault false;
+  };
+  networking.firewall.allowedTCPPorts = [ 22 ];
 }

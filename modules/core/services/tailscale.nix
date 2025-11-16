@@ -1,8 +1,8 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
-  services.tailscale = {
+  services.tailscale = with lib; {
     enable = true;
-    useRoutingFeatures = "client";
+    useRoutingFeatures = mkDefault "client";
   };
 }

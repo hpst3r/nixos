@@ -1,6 +1,7 @@
 { config, ... }:
 
 {
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
   security.acme = {
     defaults.server = "https://intermediate-ca.lab.wporter.org/acme/acme/directory";
     defaults.email = "noc@wporter.org";

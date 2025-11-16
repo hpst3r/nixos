@@ -58,9 +58,9 @@
 
     in {
       nixosConfigurations = {
-        "Z790"           = mkHost "Z790";
-        "T14G2-PF3LLSSV" = mkHost "T14G2-PF3LLSSV";
-        "9380-BZ4R3X2"   = mkHost "9380-BZ4R3X2";
+        "z790"  = mkHost "z790";
+        "t14g2" = mkHost "t14g2";
+        "9380"  = mkHost "9380";
       };
   }; # inputs
 } # nix

@@ -1,8 +1,1 @@
-{ config, ... }:
-
-{
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-}
+{ config, ... }: { services.printing.enable = true; }

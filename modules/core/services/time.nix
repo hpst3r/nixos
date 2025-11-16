@@ -1,8 +1,8 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   services.timesyncd.enable = true;
-  time = {
-    timeZone = "America/New_York";
+  time = with lib; {
+    timeZone = mkDefault "America/New_York";
   };
 }
