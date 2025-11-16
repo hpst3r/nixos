@@ -4,8 +4,8 @@
   services = {
     graylog = {
       enable = true;
-      passwordSecret = "BM4hBy-bJ1ypUz8GIJAmc0gB-2FAbCDF1cNwyV2LcAvhrDw3r8BhmrRIFc47f4cQWsnRBsrrhywk9uGdSXWoXzxKJrz80wSh";
-      rootPasswordSha2 = "db072f89f7cf605443eeca3c571d9447af470d7a0d9c5e450c0f730022231422";
+      passwordSecret = "placeholder";
+      rootPasswordSha2 = "placeholder";
       extraConfig = ''
         http_external_uri = http://localhost/graylog/
 	http_publish_uri = http://localhost/graylog/

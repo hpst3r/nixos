@@ -27,9 +27,11 @@
         in
           nixpkgs.lib.nixosSystem {
 
-            inherit system; # import system type from hosts/hostname/system
+            # import system type from hosts/hostname/system
+            inherit system;
 
-            specialArgs = { # allow modules to use hostname
+            # allow modules to use hostname
+            specialArgs = {
               inherit inputs hostName;
             };
 
@@ -57,6 +59,7 @@
       }; # mkHost
 
     in {
+      # templated system definitions. uses mkHost to reuse code
       nixosConfigurations = {
         "z790"  = mkHost "z790";
         "t14g2" = mkHost "t14g2";
