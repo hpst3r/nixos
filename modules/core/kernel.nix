@@ -1,1 +1,5 @@
-{ pkgs, config, lib, ... }: { boot.kernelPackages = lib.mkDefault pkgs.linuxPackages; }
+{ pkgs, config, lib, ... }:
+
+with lib; {
+  boot.kernelPackages = mkDefault pkgs.linuxPackages;
+}

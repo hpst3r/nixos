@@ -11,11 +11,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # import-tree
-    import-tree.url = "github:vic/import-tree";
   };
 
-  outputs = { self, nixpkgs, home-manager, import-tree, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       
       mkHost = hostName:
@@ -32,34 +30,40 @@
 
             # allow modules to use hostname
             specialArgs = {
-              inherit inputs hostName;
+              inherit hostName;
             };
 
             modules = [
 
-              # root config
-              ./configuration.nix
+              ({ lib, ... }: {
+                options.desktop.enable = lib.mkEnableOption "desktop environment, apps and services";
+              })
+
+              # core config
+              ./modules/core/core.nix
+              # conditionally enabled desktop modules
+              ./modules/desktop/desktop.nix
               
               # hardware config
-              ./modules/hosts/${hostName}/_hardware-configuration.nix
-              
-              # import-tree
-              import-tree
+              ./modules/hosts/${hostName}/hardware-configuration.nix
+
+              # per-system config
+              ./modules/hosts/${hostName}/configuration.nix
 
               # home-manager
               home-manager.nixosModules.home-manager
 
-              # host directory
-              {
-                imports = [( import-tree ./modules/hosts/${hostName} )];
-                networking.hostName = hostName;
-              }
+              { networking.hostName = hostName; }
 
             ]; # system
       }; # mkHost
 
     in {
+
       # templated system definitions. uses mkHost to reuse code
+
+      nixpkgs.config.allowUnfree = true;
+
       nixosConfigurations = {
         "z790"  = mkHost "z790";
         "t14g2" = mkHost "t14g2";

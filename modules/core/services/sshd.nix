@@ -3,7 +3,7 @@
 {
   services.openssh = with lib; {
     enable = mkDefault true;
-    passwordAuthentication = mkDefault false;
+    settings.PasswordAuthentication = mkDefault false;
   };
   networking.firewall.allowedTCPPorts = [ 22 ];
 }
