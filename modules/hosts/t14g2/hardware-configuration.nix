@@ -20,7 +20,7 @@
   fileSystems."/nix" = {
     device = "zpool/nix";
     fsType = "zfs";
-    options = [ "zfsutil" "noatime" "noacl" ];
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/var" = {
