@@ -9,7 +9,6 @@
       obsidian
       logseq
       geary
-      gh
       spotify
       powershell
       drawio

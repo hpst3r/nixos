@@ -6,6 +6,7 @@ let
     ./applications/1password.nix
     ./applications/desktop-pkgs.nix
     ./applications/signed-git.nix
+    ./applications/gh.nix
     ./applications/ssh.nix
     ./services/audio.nix
     ./services/bluetooth.nix
