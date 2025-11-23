@@ -65,9 +65,6 @@ Daemons, e.g., the Prometheus node-exporter, journald-upload or log shippers, ma
 I've just been symlinking the `modules/` directory, my `flake.nix`, and the `configuration.nix` file from my repo to `/etc/nixos/`. Works for now.
 
 ```sh
-sudo ln -s /home/wporter/nixos/modules /etc/nixos/modules
-
-sudo ln -s /home/wporter/nixos/flake.nix /etc/nixos/flake.nix
-
-sudo ln -s /home/wporter/nixos/configuration.nix /etc/nixos/configuration.nix
+sudo rm -rf /etc/nixos
+sudo ln -s ~/nixos /etc/nixos
 ```
