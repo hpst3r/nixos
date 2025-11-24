@@ -1,7 +1,6 @@
 { pkgs, config, ...}:
 
 {
-
   nixpkgs.config.allowUnfree = true;
 
   users.users.wporter = {

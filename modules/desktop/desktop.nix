@@ -14,6 +14,8 @@ let
   ];
 in {
 
+  config.onepass.enable = lib.mkDefault true;
+
   imports = desktopModules;
-  
+
 }

@@ -41,9 +41,7 @@
 
               # core config
               ./modules/core/core.nix
-              # conditionally enabled desktop modules
-              ./modules/desktop/desktop.nix
-              
+                            
               # hardware config
               ./modules/hosts/${hostName}/hardware-configuration.nix
 

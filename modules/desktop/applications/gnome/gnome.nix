@@ -17,7 +17,6 @@
     epiphany # web browser
     simple-scan # doc scanner
     yelp # help viewer
-    geary # email client
     seahorse # password manager
 
     gnome-calendar
@@ -35,7 +34,6 @@
 
   home-manager.users.wporter = { pkgs, ... }: {
   
-    # GNOME configuration
     dconf.settings = {
       "org/gnome/shell" = {
         favorite-apps = [

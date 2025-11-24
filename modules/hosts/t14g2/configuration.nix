@@ -3,7 +3,9 @@
   # zfs
   networking.hostId = "1c785dc8";
 
-  desktop.enable = true;
+  imports = [
+    ../../desktop/desktop.nix
+  ];
 
   system.stateVersion = "25.05";
 

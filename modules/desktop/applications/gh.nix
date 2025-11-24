@@ -5,6 +5,6 @@
     enable = true;
     gitCredentialHelper = {
       enable = true;
-    };
-  };
+    }; # ch
+  }; # gh
 }

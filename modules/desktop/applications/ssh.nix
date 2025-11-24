@@ -9,5 +9,5 @@ in {
       Host *
           IdentityAgent ${onePassSSHAgent}
     '';
-  };
+  }; # ssh
 }

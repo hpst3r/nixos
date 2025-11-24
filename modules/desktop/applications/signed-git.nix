@@ -16,7 +16,7 @@
       user = {
         # grab first authorized key for my user
         signingKey = builtins.head config.users.users.wporter.openssh.authorizedKeys.keys;
-      };
-    };
-  };
+      }; # user
+    }; # extraConfig
+  }; # git
 }
