@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+	imports = [ ./nginx-grafana.nix ];
   services.grafana = {
 
 		enable = true;

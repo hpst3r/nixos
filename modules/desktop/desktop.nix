@@ -1,4 +1,4 @@
-{ pkgs, config, lib, self, ... }:
+{ pkgs, config, lib, self, home-manager, ... }:
 
 let
   desktopModules = [
@@ -15,6 +15,9 @@ let
 in {
 
   config.onepass.enable = lib.mkDefault true;
+
+  # if this is necessary, I don't think it will be
+  # home-manager.backupFileExtension = ".oldhomebak";
 
   imports = desktopModules;
 

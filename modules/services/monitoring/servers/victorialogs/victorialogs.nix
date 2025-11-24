@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ./nginx-victorialogs.nix ];
   services.victorialogs = {
     enable = true;
     listenAddress = "localhost:9428";
