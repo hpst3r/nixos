@@ -36,13 +36,13 @@
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/C087-E7F0";
+    device = "/dev/disk/by-id/nvme-INTEL_SSDPEKNU010TZ_PHKA214404B51P0B_1-part1";
     fsType = "vfat";
     options = [ "fmask=0022" "dmask=0022" ];
   };
 
   swapDevices = [{
-    device = "/dev/disk/by-id/nvme-INTEL_SSDPEKNU010TZ_PHKA1474028J1P0B_1-part2";
+    device = "/dev/disk/by-id/nvme-INTEL_SSDPEKNU010TZ_PHKA214404B51P0B_1-part2";
     randomEncryption = true;
   }];
 

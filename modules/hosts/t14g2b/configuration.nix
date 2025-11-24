@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }: {
 
   # zfs
-  networking.hostId = "1c785dc8";
+  networking.hostId = "68a20cc5";
 
   imports = [
     ../../desktop/desktop.nix
