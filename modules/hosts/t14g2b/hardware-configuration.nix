@@ -38,7 +38,7 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-id/nvme-INTEL_SSDPEKNU010TZ_PHKA214404B51P0B_1-part1";
     fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
+    options = [ "fmask=0022" "dmask=0022" "umask=0077" ];
   };
 
   swapDevices = [{

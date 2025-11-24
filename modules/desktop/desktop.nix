@@ -1,16 +1,16 @@
-{ pkgs, config, lib, home-manager, ... }:
+{ pkgs, config, lib, self, ... }:
 
 let
   desktopModules = [
-    ./applications/gnome/gnome.nix
-    ./applications/1password.nix
-    ./applications/desktop-pkgs.nix
-    ./applications/signed-git.nix
-    ./applications/gh.nix
-    ./applications/ssh.nix
-    ./services/audio.nix
-    ./services/bluetooth.nix
-    ./services/cups.nix
+    "${self}/modules/desktop/applications/gnome/gnome.nix"
+    "${self}/modules/desktop/applications/1password.nix"
+    "${self}/modules/desktop/applications/desktop-pkgs.nix"
+    "${self}/modules/desktop/applications/signed-git.nix"
+    "${self}/modules/desktop/applications/gh.nix"
+    "${self}/modules/desktop/applications/ssh.nix"
+    "${self}/modules/desktop/services/audio.nix"
+    "${self}/modules/desktop/services/bluetooth.nix"
+    "${self}/modules/desktop/services/cups.nix"
   ];
 in {
 

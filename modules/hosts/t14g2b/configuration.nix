@@ -4,7 +4,7 @@
   networking.hostId = "68a20cc5";
 
   imports = [
-    ../../desktop/desktop.nix
+    "${self}/modules/desktop/desktop.nix"
   ];
 
   system.stateVersion = "25.05";

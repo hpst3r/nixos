@@ -30,7 +30,7 @@
 
             # allow modules to use hostname
             specialArgs = {
-              inherit hostName;
+              inherit hostName self;
             };
 
             modules = [
