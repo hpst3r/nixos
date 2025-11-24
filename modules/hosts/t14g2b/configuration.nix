@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }: {
+{ config, self, ... }: {
 
   # zfs
   networking.hostId = "68a20cc5";
