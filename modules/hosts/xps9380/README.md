@@ -1,5 +1,5 @@
 
-# 9380
+# xps9380
 
 Dell XPS 13 9380. Currently in use as a server, because why not.
 

@@ -1,7 +1,7 @@
 { config, self, ... }: {
 
   imports = [
-    "${self}/modules/desktop/desktop.nix"
+    #"${self}/modules/desktop/desktop.nix"
 
     "${self}/modules/services/monitoring/agents/prometheus-exporter.nix"
     "${self}/modules/services/monitoring/agents/journald-upload.nix"
