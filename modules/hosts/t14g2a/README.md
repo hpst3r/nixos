@@ -6,6 +6,8 @@ ThinkPad T14 Gen 2 AMD
 - 48gb (16gb soldered + 32gb SODIMM) DDR4 3200
 - 1tb Intel SSD 670P
 
+Root on (natively encrypted) ZFS
+
 ```txt
 [wporter@t14g2:~]$ nix run nixpkgs#fastfetch
           ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖             wporter@t14g2
