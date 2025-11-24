@@ -66,7 +66,7 @@
         "z790"  = mkHost "z790";
         "t14g2a" = mkHost "t14g2a";
         "t14g2b" = mkHost "t14g2b";
-        "9380"  = mkHost "9380";
+        "xps9380"  = mkHost "xps9380";
       };
   }; # inputs
 } # nix
