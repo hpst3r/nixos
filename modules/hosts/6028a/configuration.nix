@@ -15,13 +15,14 @@
     efiSupport = true;
     device = "nodev"; # tells grub to not install to mbr
     mirroredBoots = [
-      { devices = [ "nodev" ]; path = "/boot1"; efiSysMountPoint = "/boot1"; } # nodev - don't use device install
+      # don't use mirroredBoots for /boot1, let boot.loader.efi deal with it
+      # { devices = [ "nodev" ]; path = "/boot1"; efiSysMountPoint = "/boot1"; } # nodev - don't use device install
       { devices = [ "nodev" ]; path = "/boot2"; efiSysMountPoint = "/boot2"; }
     ];
   };
  
   boot.loader.efi = {
-    canTouchEfiVariables = true;
+    canTouchEfiVariables = true; # automatic efi var mgmt only for boot1
     efiSysMountPoint = "/boot1"; # so GRUB doesn't try to install to /boot
   };
 
