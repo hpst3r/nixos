@@ -20,7 +20,10 @@
     ];
   };
  
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi = {
+    canTouchEfiVariables = true;
+    efiSysMountPoint = "/boot1"; # so GRUB doesn't try to install to /boot
+  };
 
   boot.supportedFilesystems = [ "zfs" ];
   
