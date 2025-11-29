@@ -1,10 +1,11 @@
+
 # T14 G2 #1
 
 ThinkPad T14 Gen 2 AMD
 
-- R7 5850U (8c 16t)
+- R7 5850U (8c16t)
 - 48gb (16gb soldered + 32gb SODIMM) DDR4 3200
-- 1tb Intel SSD 670P
+- 1tb Intel SSD 670P (boot, swap, rpool)
 
 Root on (natively encrypted) ZFS.
 

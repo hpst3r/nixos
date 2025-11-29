@@ -1,6 +1,6 @@
 { config, self, ... }: {
 
-  # zfs
+  # zfs - gen with `head -c 4 /dev/random | od -A none -t x4`
   networking.hostId = "68a20cc5";
 
   imports = [
