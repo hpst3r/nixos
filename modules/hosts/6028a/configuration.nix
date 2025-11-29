@@ -13,9 +13,10 @@
     enable = true;
     zfsSupport = true;
     efiSupport = true;
+    device = "nodev"; # tells grub to not install to mbr
     mirroredBoots = [
-      { devices = [ "/dev/disk/by-id/ata-INTEL_SSDSC2BB480G4_BTWL5223027M480QGN-part1" ]; path = "/boot1"; }
-      { devices = [ "/dev/disk/by-id/ata-INTEL_SSDSC2BB480G4_BTWL52220571480QGN-part1" ]; path = "/boot2"; }
+      { devices = [ "nodev" ]; path = "/boot1"; efiSysMountPoint = "/boot1"; } # nodev - don't use device install
+      { devices = [ "nodev" ]; path = "/boot2"; efiSysMountPoint = "/boot2"; }
     ];
   };
  
