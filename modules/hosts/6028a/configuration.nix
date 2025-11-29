@@ -22,7 +22,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.enableUnstable = true;
   
   # prevents "multiple pools with same name" problem during boot
   # boot.zfs.devNodes = "/dev/disk/by-partuuid";
