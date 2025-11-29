@@ -1,4 +1,4 @@
-{ config, self, ... }: {
+{ config, self, lib, ... }: with lib; {
 
   # zfs - gen with `head -c 4 /dev/random | od -A none -t x4`
   networking.hostId = "71803014";
@@ -21,7 +21,7 @@
   };
  
   boot.loader.efi = {
-    canTouchEfiVariables = false; # automatic efi var mgmt only for boot1
+    canTouchEfiVariables = mkForce false; # automatic efi var mgmt only for boot1
     # efiSysMountPoint = "/boot1"; # so GRUB doesn't try to install to /boot
   };
 
