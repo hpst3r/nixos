@@ -15,9 +15,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
-      
       mkHost = hostName:
-
         let
           system = nixpkgs.lib.strings.trim (
             builtins.readFile ./modules/hosts/${hostName}/_system
@@ -27,7 +25,7 @@
 
             # import system type from hosts/hostname/system
             inherit system;
-
+            
             # allow modules to use hostname
             specialArgs = {
               inherit hostName self;
