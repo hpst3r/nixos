@@ -15,20 +15,19 @@
     efiSupport = true;
     device = "nodev"; # tells grub to not install to mbr
     mirroredBoots = [
-      # don't use mirroredBoots for /boot1, let boot.loader.efi deal with it
-      # { devices = [ "nodev" ]; path = "/boot1"; efiSysMountPoint = "/boot1"; } # nodev - don't use device install
+      { devices = [ "nodev" ]; path = "/boot1"; efiSysMountPoint = "/boot1"; } # nodev - don't use device install
       { devices = [ "nodev" ]; path = "/boot2"; efiSysMountPoint = "/boot2"; }
     ];
   };
  
   boot.loader.efi = {
-    canTouchEfiVariables = true; # automatic efi var mgmt only for boot1
-    efiSysMountPoint = "/boot1"; # so GRUB doesn't try to install to /boot
+    canTouchEfiVariables = false; # automatic efi var mgmt only for boot1
+    # efiSysMountPoint = "/boot1"; # so GRUB doesn't try to install to /boot
   };
 
   boot.supportedFilesystems = [ "zfs" ];
   
   # prevents "multiple pools with same name" problem during boot
-  # boot.zfs.devNodes = "/dev/disk/by-partuuid";
+  boot.zfs.devNodes = "/dev/disk/by-partuuid";
 
 }
