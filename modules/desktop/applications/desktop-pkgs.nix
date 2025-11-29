@@ -3,6 +3,11 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  environment.systemPackages = with pkgs; [
+    wineWowPackages.stagingFull
+    winetricks
+  ];
+
   users.users.wporter = {
     packages = with pkgs; [
       obsidian
