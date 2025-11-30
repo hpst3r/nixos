@@ -22,7 +22,7 @@
  
   boot.loader.efi = mkForce {
     canTouchEfiVariables = false; # automatic efi var mgmt only for boot1
-    efiSysMountPoint = null; # so GRUB doesn't try to install to /boot
+    # efiSysMountPoint = ; # so GRUB doesn't try to install to /boot
   };
 
   boot.supportedFilesystems = [ "zfs" ];
