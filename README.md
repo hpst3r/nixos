@@ -57,5 +57,5 @@ Overrides, imports, or special configuration per host (e.g., custom bootloader c
 
 ```sh
 sudo rm -rf /etc/nixos
-sudo ln -s /etc/nixos ~/nixos
+sudo ln -s /home/wporter/nixos /etc/nixos
 ```

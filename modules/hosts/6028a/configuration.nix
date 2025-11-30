@@ -10,6 +10,8 @@
 
   system.stateVersion = "25.05";
 
+  # config for mirrored bootloader
+
   boot.loader.systemd-boot.enable = false; # override default in core/bootloader.nix
 
   boot.loader.grub = {

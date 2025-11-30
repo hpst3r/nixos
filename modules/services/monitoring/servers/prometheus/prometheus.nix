@@ -7,9 +7,15 @@
     scrapeConfigs = [
       {
         job_name = "node";
-	static_configs = [{
-	  targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ];
-	}];
+        static_configs = [{
+          targets = [
+            "localhost:${toString config.services.prometheus.exporters.node.port}"
+            "6028a:${toString config.services.prometheus.exporters.node.port}"
+            "6028b:${toString config.services.prometheus.exporters.node.port}"
+            "t14g2a:${toString config.services.prometheus.exporters.node.port}"
+            "t14g2b:${toString config.services.prometheus.exporters.node.port}"
+          ];
+        }];
       }
     ];
   };

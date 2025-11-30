@@ -11,6 +11,7 @@ let
     "${self}/modules/desktop/services/audio.nix"
     "${self}/modules/desktop/services/bluetooth.nix"
     "${self}/modules/desktop/services/cups.nix"
+    ./home-manager.nix
   ];
 in {
 

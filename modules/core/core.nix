@@ -3,7 +3,6 @@
 let
   coreModules = [
     ./packages/base-pkgs.nix
-    ./packages/home-manager.nix
     ./services/networking.nix
     ./services/sshd.nix
     ./services/tailscale.nix
