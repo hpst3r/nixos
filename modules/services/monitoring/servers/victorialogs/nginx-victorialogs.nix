@@ -22,6 +22,12 @@
       locations."/" = {
         proxyPass = "http://localhost:9428";
       };
+      locations."/insert/journald" = {
+        proxyPass = "http://localhost:9428";
+        extraConfig = ''
+	        client_max_body_size 256M;
+        ''; # journal uploads can be quite large & journal-upload.service will just kill itself if it can't shove a whole load into the server at once
+      };
     };
   };
 }
