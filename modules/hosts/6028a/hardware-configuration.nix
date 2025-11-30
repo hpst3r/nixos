@@ -11,25 +11,25 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "zpool/root";
+    device = "rpool/root";
     fsType = "zfs";
     options = [ "zfsutil" ];
   };
 
   fileSystems."/nix" = {
-    device = "zpool/nix";
+    device = "rpool/nix";
     fsType = "zfs";
     options = [ "zfsutil" ];
   };
 
   fileSystems."/var" = {
-    device = "zpool/var";
+    device = "rpool/var";
     fsType = "zfs";
     options = [ "zfsutil" ];
   };
 
   fileSystems."/home" = {
-    device = "zpool/home";
+    device = "rpool/home";
     fsType = "zfs";
     options = [ "zfsutil" ];
   };
