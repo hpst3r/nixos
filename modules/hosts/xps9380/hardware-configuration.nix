@@ -13,20 +13,20 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-id/nvme-Samsung_SSD_960_EVO_250GB_S3ESNX0K366033D-part3";
-      fsType = "xfs";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-id/nvme-Samsung_SSD_960_EVO_250GB_S3ESNX0K366033D-part3";
+    fsType = "xfs";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-id/nvme-Samsung_SSD_960_EVO_250GB_S3ESNX0K366033D-part1";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" "umask=0077" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-id/nvme-Samsung_SSD_960_EVO_250GB_S3ESNX0K366033D-part1";
+    fsType = "vfat";
+    options = [ "fmask=0022" "dmask=0022" "umask=0077" ];
+  };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-id/nvme-Samsung_SSD_960_EVO_250GB_S3ESNX0K366033D-part2"; }
-    ];
+  swapDevices = [
+    { device = "/dev/disk/by-id/nvme-Samsung_SSD_960_EVO_250GB_S3ESNX0K366033D-part2"; }
+  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
