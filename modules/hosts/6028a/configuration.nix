@@ -14,14 +14,15 @@
     zfsSupport = true;
     efiSupport = true;
     device = "nodev"; # tells grub to not install to mbr
+    path = "/boot1";
+    efiSysMountPoint = "/boot1";
     mirroredBoots = [
-      { devices = [ "nodev" ]; path = "/boot1"; efiSysMountPoint = "/boot1"; } # nodev - don't use device install
       { devices = [ "nodev" ]; path = "/boot2"; efiSysMountPoint = "/boot2"; }
     ];
   };
  
   boot.loader.efi = mkForce {
-    canTouchEfiVariables = false; # automatic efi var mgmt only for boot1
+    canTouchEfiVariables = true; # automatic efi var mgmt only for boot1
     # efiSysMountPoint = mkForce null; # so GRUB doesn't try to install to /boot
   };
 
