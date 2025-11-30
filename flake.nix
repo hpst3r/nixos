@@ -2,12 +2,12 @@
   description = "system flake";
 
   inputs = {
-    # 25-05 package source
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    # unstable package source
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # home-manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
