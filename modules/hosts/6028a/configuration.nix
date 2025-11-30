@@ -14,7 +14,7 @@
     zfsSupport = true;
     efiSupport = true;
     device = "nodev"; # tells grub to not install to mbr
-    mirroredBoots = [
+    mirroredBoots = mkForce [
       { devices = [ "nodev" ]; path = "/boot1"; efiSysMountPoint = "/boot1"; }
       { devices = [ "nodev" ]; path = "/boot2"; efiSysMountPoint = "/boot2"; }
     ];
