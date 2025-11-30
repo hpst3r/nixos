@@ -1,7 +1,7 @@
 
 # Readme
 
-My NixOS system configurations. Fairly standard modular config. No import-tree for simplicity.
+My NixOS system configurations. Fairly standard modular config. No more import-tree for simplicity.
 
 Still getting an idea of how I want to organize things and working on moving services over to Nix.
 
@@ -18,15 +18,9 @@ Defines:
   - systems import their 'hosts' directory by hostname
   - hosts directory contains per-machine overrides and further imports
 
-### configuration.nix
-
-Exists to define my global recursive imports, stateVersion, and enable flakes.
-
-Imports everything in `modules/core`.
-
 ### modules: core
 
-Core components of the system:
+Core components of the system, imported by `mkHost` (`flake.nix`):
 
 - base packages (basic tools, text editors)
 - common home-manager config (git username)
@@ -39,7 +33,7 @@ Core components of the system:
 
 ### modules: applications
 
-Interactive apps for my desktop systems.
+Interactive apps for my desktop systems. Imported at the host level (`/modules/hosts`).
 
 - desktop environment config
 - desktop packages (browser, Spotify, etc)
@@ -51,11 +45,11 @@ Interactive apps for my desktop systems.
 
 Hosted services or agents for those services, where applicable.
 
-Explicitly imported at machine level, often as metapackages (e.g., monitoring-server.nix imports grafana.nix -> grafana-nignx.nix, prometheus.nix, victorialogs.nix -> vmui-nginx.nix).
+Explicitly imported at host level, often as metapackages (e.g., monitoring-server.nix imports grafana.nix -> grafana-nignx.nix, prometheus.nix, victorialogs.nix -> vmui-nginx.nix).
 
-### hosts
+### modules: hosts
 
-Imported by hostname by mkHost.
+Imported by hostname in `mkHost` (`flake.nix`).
 
 Overrides, imports, or special configuration per host (e.g., custom bootloader configuration, the hardware configuration, imports for desktop package set or service package sets).
 

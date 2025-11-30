@@ -3,7 +3,10 @@
   # zfs - gen with `head -c 4 /dev/random | od -A none -t x4`
   networking.hostId = "71803014";
 
-  imports = [];
+  imports = [
+    "${self}/modules/services/monitoring/agents/prometheus-exporter.nix"
+    "${self}/modules/services/monitoring/agents/journald-upload.nix"
+  ];
 
   system.stateVersion = "25.05";
 
