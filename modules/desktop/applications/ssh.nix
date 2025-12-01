@@ -5,9 +5,7 @@ let
 in {
   home-manager.users.wporter.programs.ssh = {
     enable = true;
-    extraConfig = ''
-      Host *
-          IdentityAgent ${onePassSSHAgent}
-    '';
+    enableDefaultConfig = false;
+    matchBlocks."*".identityAgent = onePassSSHAgent;
   }; # ssh
 }

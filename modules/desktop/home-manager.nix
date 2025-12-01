@@ -12,8 +12,10 @@
 
     programs.git = {
       enable = true;
-      userName = "William Porter";
-      userEmail = "liam@wporter.org";
+      settings.user = {
+        name = "William Porter";
+        email = "liam@wporter.org";
+      };
     };
   };
 }

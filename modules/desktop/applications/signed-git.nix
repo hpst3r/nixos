@@ -3,7 +3,7 @@
 {
   home-manager.users.wporter.programs.git = {
     enable = true;
-    extraConfig = {
+    settings = {
       gpg = {
         format = "ssh";
       };
