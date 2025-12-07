@@ -15,6 +15,11 @@ let
   ];
 in {
 
+  config.hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   config.onepass.enable = lib.mkDefault true;
 
   # if this is necessary, I don't think it will be

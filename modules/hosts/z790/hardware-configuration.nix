@@ -6,6 +6,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  hardware.amdgpu.initrd.enable = true;
+
   fileSystems."/" = {
     device = "zpool/root";
     fsType = "zfs";
