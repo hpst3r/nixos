@@ -1,34 +1,30 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
-
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "zpool/root";
-      fsType = "zfs";
-    };
+  fileSystems."/" = {
+    device = "zpool/root";
+    fsType = "zfs";
+  };
 
-  fileSystems."/nix" =
-    { device = "zpool/nix";
-      fsType = "zfs";
-    };
+  fileSystems."/nix" = {
+    device = "zpool/nix";
+    fsType = "zfs";
+  };
 
-  fileSystems."/var" =
-    { device = "zpool/var";
-      fsType = "zfs";
-    };
+  fileSystems."/var" = {
+    device = "zpool/var";
+    fsType = "zfs";
+  };
 
-  fileSystems."/home" =
-    { device = "zpool/home";
-      fsType = "zfs";
-    };
+  fileSystems."/home" = {
+    device = "zpool/home";
+    fsType = "zfs";
+  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-id/nvme-Samsung_SSD_990_EVO_2TB_S7M4NL0Y206745K-part1";
@@ -36,9 +32,10 @@
     options = [ "fmask=0022" "dmask=0022" "umask=0077" ];
   };
 
-  swapDevices = [
-    { device = "/dev/disk/by-id/nvme-Samsung_SSD_990_EVO_2TB_S7M4NL0Y206745K-part2"; }
-  ];
+  swapDevices = [{
+    device = "/dev/disk/by-id/nvme-Samsung_SSD_990_EVO_2TB_S7M4NL0Y206745K-part2";
+    randomEncryption = true;
+  }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
