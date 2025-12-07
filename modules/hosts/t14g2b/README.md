@@ -3,7 +3,7 @@
 
 ThinkPad T14 Gen 2 AMD (number 2 - actually my first one, though it doesn't matter)
 
-- R7 5850U (8c16t)
+- R7 5850U (8c16t Cezanne)
 - 48gb (16gb soldered + 32gb SODIMM) DDR4 3200
 - 1tb Intel SSD 670P (boot, swap, rpool)
 

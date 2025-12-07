@@ -3,7 +3,7 @@
 
 Dell XPS 13 9380. Currently in use as a server, because why not.
 
-- i7-8565U
+- i7-8565U (4c8t Whiskey Lake)
 - 16gb (soldered) LPDDR3 2133
 - 256gb Samsung 960 Evo
 
