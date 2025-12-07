@@ -6,6 +6,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  hardware.enableRedistributableFirmware = true;
   hardware.amdgpu.initrd.enable = true;
 
   fileSystems."/" = {
