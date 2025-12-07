@@ -1,7 +1,8 @@
 { pkgs, config, home-manager, ... }:
 
 {
-  home-manager.useUserPackages = true;
+
+  home-manager.useUserPackages = false;
   home-manager.useGlobalPkgs = true;
 
   home-manager.users.wporter = { pkgs, ... }: {
