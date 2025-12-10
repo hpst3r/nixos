@@ -17,6 +17,9 @@
       };
     };
     virtualHosts."victorialogs.lab.wporter.org" = {
+      extraConfig = ''
+	      listen 19532;
+      '';
       enableACME = true;
       forceSSL = true;
       locations."/" = {
@@ -32,18 +35,5 @@
         # https://www.freedesktop.org/software/systemd/man/latest/journal-upload.conf.html
       };
     };
-    # workaround to avoid requiring SELinux module for SELinux-enabled clients
-    # listen on 19532; SELinux blocks name_connect to 443 for systemd_journal_upload_t
-    virtualHosts."victorialogs.lab.wporter.org" = {
-      forceSSL = true;
-      locations."/insert/journald" = {
-        listen.port = 19532;
-        proxyPass = "http://localhost:9428";
-        extraConfig = ''
-	        client_max_body_size 5G;
-        ''; # see abv
-      };
-    };
-
   };
 }
