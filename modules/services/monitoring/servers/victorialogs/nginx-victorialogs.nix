@@ -12,16 +12,24 @@
     virtualHosts."vmui.lab.wporter.org" = {
       enableACME = true;
       forceSSL = true;
+      # disable http/2 to work around https://github.com/systemd/systemd/issues/39166
+      # must be disabled for all server blocks - nginx limitation
+      http2 = false;
       locations."/" = {
         proxyPass = "http://localhost:9428";
       };
     };
     virtualHosts."victorialogs.lab.wporter.org" = {
+      # listen 80 ; (https redirect)
+      # listen 443 ssl ;
+      # listen on journald port - selinux workaround
       extraConfig = ''
-	      listen 19532;
+	      listen 0.0.0.0:19532 ssl ;
       '';
-      enableACME = true;
       forceSSL = true;
+      enableACME = true;
+      # disable http/2 to work around https://github.com/systemd/systemd/issues/39166
+      http2 = false;
       locations."/" = {
         proxyPass = "http://localhost:9428";
       };

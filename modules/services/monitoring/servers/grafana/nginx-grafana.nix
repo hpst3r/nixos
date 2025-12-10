@@ -10,6 +10,10 @@
   services.nginx = {
     enable = true;
     virtualHosts."grafana.lab.wporter.org" = {
+      # disable http/2 to work around https://github.com/systemd/systemd/issues/39166
+      # for systemd-journal-upload ingest to victorialogs
+      # must be disabled for all server blocks - nginx limitation
+      http2 = false;
       enableACME = true;
       forceSSL = true;
       locations."/" = {
