@@ -16,7 +16,7 @@
       # must be disabled for all server blocks - nginx limitation
       http2 = false;
       locations."/" = {
-        proxyPass = "http://localhost:9428";
+        proxyPass = "http://127.0.0.1:9428";
       };
     };
     virtualHosts."victorialogs.lab.wporter.org" = {
@@ -31,10 +31,10 @@
       # disable http/2 to work around https://github.com/systemd/systemd/issues/39166
       http2 = false;
       locations."/" = {
-        proxyPass = "http://localhost:9428";
+        proxyPass = "http://127.0.0.1:9428";
       };
       locations."/insert/journald" = {
-        proxyPass = "http://localhost:9428";
+        proxyPass = "http://127.0.0.1:9428";
         extraConfig = ''
 	        client_max_body_size 5G;
         ''; # journal uploads can be quite large & journal-upload.service will just kill itself

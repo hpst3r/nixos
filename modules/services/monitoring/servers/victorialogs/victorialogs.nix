@@ -4,7 +4,7 @@
   imports = [ ./nginx-victorialogs.nix ];
   services.victorialogs = {
     enable = true;
-    listenAddress = "localhost:9428";
+    listenAddress = "127.0.0.1:9428";
     extraOptions = [
       "-retentionPeriod=14d"
     ];
