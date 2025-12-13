@@ -32,4 +32,9 @@
   # prevents "multiple pools with same name" problem during boot
   boot.zfs.devNodes = "/dev/disk/by-partuuid";
 
+  hardware.infiniband = {
+    enable = true;
+    # guids = [];
+  }
+
 }

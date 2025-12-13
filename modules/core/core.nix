@@ -8,11 +8,11 @@ let
     ./services/tailscale.nix
     ./services/time.nix
     ./services/autogc.nix
-    ./bootloader.nix
-    ./kernel.nix
-    ./locale.nix
-    ./root-certs.nix
-    ./users.nix
+    ./system/bootloader.nix
+    ./system/kernel.nix
+    ./system/locale.nix
+    ./pki/root-certs.nix
+    ./users/wporter.nix
     ./nix.nix
   ];
 in {
