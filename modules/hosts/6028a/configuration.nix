@@ -35,6 +35,6 @@
   hardware.infiniband = {
     enable = true;
     # guids = [];
-  }
+  };
 
 }
