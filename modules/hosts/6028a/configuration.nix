@@ -34,7 +34,7 @@
 
   hardware.infiniband = {
     enable = true;
-    # guids = [];
+    guids = [ "0xe41d2d0300b3f511" "0xe41d2d0300b3f512" ];
   };
 
 }
