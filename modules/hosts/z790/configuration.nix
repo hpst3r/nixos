@@ -8,6 +8,7 @@
     "${self}/modules/services/monitoring/agents/prometheus-exporter.nix"
     "${self}/modules/services/monitoring/agents/journald-upload.nix"
     "${self}/modules/services/virtualization/libvirt.nix"
+    "${self}/modules/desktop/games/games.nix"
   ];
 
   system.stateVersion = "26.05";
