@@ -6,7 +6,7 @@
     enable = true;
     listenAddress = "127.0.0.1:9428";
     extraOptions = [
-      "-retentionPeriod=14d"
+      "-retentionPeriod=52w"
     ];
   };
 }
