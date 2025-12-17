@@ -9,7 +9,7 @@
   };
   services.nginx = {
     enable = true;
-    virtualHosts."vmui.lab.wporter.org" = {
+    virtualHosts."vl.lab.wporter.org" = {
       enableACME = true;
       forceSSL = true;
       # disable http/2 to work around https://github.com/systemd/systemd/issues/39166
