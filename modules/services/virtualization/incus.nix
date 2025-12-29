@@ -20,6 +20,25 @@
           "name" = "default";
         }
       ];
+      "profiles" = [ {
+          "config" = {};
+          "description" = "Default Incus profile";
+          "devices" = {
+            "eth0" = {
+              "name" = "eth0";
+              "network" = "incusbr0";
+              "type" = "nic";
+            };
+            "root" = {
+              "path" = "/";
+              "pool" = "default";
+              "size" = "16GB";
+              "type" = "disk";
+            };
+          };
+          "name" = "default";
+        }
+      ];
     };
   };
 }
