@@ -17,10 +17,10 @@
       powershell
       drawio
       vscode
+      wireshark
     ];
   };
 
-  programs.firefox.enable = true;
   programs.neovim.enable = true;
 
   fonts = {
@@ -32,7 +32,7 @@
     fontconfig = {
       defaultFonts = {
         serif = [ "Inter" ];
-	monospace = [ "JetBrains Mono" ];
+	      monospace = [ "JetBrains Mono" ];
       }; # defaultFonts
     }; # fontconfig
   }; # fonts 

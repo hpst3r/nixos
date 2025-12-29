@@ -3,6 +3,7 @@
 let
   desktopModules = [
     "${self}/modules/desktop/applications/gnome/gnome.nix"
+    "${self}/modules/desktop/applications/firefox.nix"
     "${self}/modules/desktop/applications/1password.nix"
     "${self}/modules/desktop/applications/desktop-pkgs.nix"
     "${self}/modules/desktop/applications/signed-git.nix"
