@@ -66,6 +66,10 @@
         "t14g2b"  = mkHost "t14g2b";
         "xps9380" = mkHost "xps9380";
         "6028a"   = mkHost "6028a";
+        "e32a"    = mkHost "e32a";
+        "e32b"    = mkHost "e32b";
+        "e32c"    = mkHost "e32c";
+        "e32d"    = mkHost "e32d";
       };
   }; # inputs
 } # nix
