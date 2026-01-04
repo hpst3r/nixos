@@ -1,5 +1,14 @@
 {...}: {
   networking.nftables.enable = true;
+  networking.firewall.allowedTCPPorts = [ 8443 ]; # incus api https
+  networking.firewall.interfaces.incusbr0.allowedTCPPorts = [
+    53
+    67
+  ];
+  networking.firewall.interfaces.incusbr0.allowedUDPPorts = [
+    53
+    67
+  ];
   virtualisation.incus = {
     enable = true;
     preseed = {
@@ -21,7 +30,9 @@
         }
       ];
       "profiles" = [ {
-          "config" = {};
+          "config" = {
+            "core.https_address" = ":8443";
+          };
           "description" = "Default Incus profile";
           "devices" = {
             "eth0" = {
