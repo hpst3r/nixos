@@ -3,8 +3,8 @@
 
 Little desktop, cluster node.
 
-- i5-4670 (4c4t Haswell)
-- 16g (4x4) DDR3 1600
+- E3-1270 v3 (4c8t Haswell)
+- 32g (8x4) ECC DDR3 1600
 - 240g Samsung something or other
 
 Root on XFS.
