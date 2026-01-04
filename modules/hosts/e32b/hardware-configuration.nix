@@ -9,18 +9,18 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-      device = "/dev/disk/by-id/ata-SAMSUNG_MZ7TY256HDHP-000L7_S307NB0J519733-part3";
+      device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_250GB_S2R5NX0H412112L-part3";
       fsType = "xfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-id/ata-SAMSUNG_MZ7TY256HDHP-000L7_S307NB0J519733-part1";
+    { device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_250GB_S2R5NX0H412112L-part1";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" "umask=0077" ];
     };
 
   swapDevices = [
-    { device = "/dev/disk/by-id/ata-SAMSUNG_MZ7TY256HDHP-000L7_S307NB0J519733-part2"; }
+    { device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_250GB_S2R5NX0H412112L-part2"; }
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
