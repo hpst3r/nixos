@@ -2,6 +2,7 @@
 
 let
   coreModules = [
+    ./hardware/nonfreefirmware.nix
     ./packages/base-pkgs.nix
     ./services/networking.nix
     ./services/sshd.nix
