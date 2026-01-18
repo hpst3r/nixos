@@ -10,6 +10,11 @@
     "${self}/modules/services/virtualization/incus.nix"
   ];
 
+  services.logind.settings.Login = {
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitch = "ignore";
+  };
+
   system.stateVersion = "26.05";
 
 }

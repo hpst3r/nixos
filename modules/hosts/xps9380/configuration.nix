@@ -9,8 +9,10 @@
     "${self}/modules/services/monitoring/monitoring-server.nix"
   ];
 
-  services.logind.settings.Login.HandleLidSwitchDocked = "ignore";
-  services.logind.settings.Login.HandleLidSwitch = "ignore";
+  services.logind.settings.Login = {
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitch = "ignore";
+  };
 
   system.stateVersion = "25.05";
 

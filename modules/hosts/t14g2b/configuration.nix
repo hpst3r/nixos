@@ -7,7 +7,13 @@
     "${self}/modules/desktop/desktop.nix"
     "${self}/modules/services/monitoring/agents/prometheus-exporter.nix"
     "${self}/modules/services/monitoring/agents/journald-upload.nix"
+    "${self}/modules/services/virtualization/incus.nix"
   ];
+
+  services.logind.settings.Login = {
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitch = "ignore";
+  };
 
   system.stateVersion = "25.05";
 
