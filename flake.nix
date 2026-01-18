@@ -18,7 +18,7 @@
       mkHost = hostName:
         let
           system = nixpkgs.lib.strings.trim (
-            builtins.readFile ./modules/hosts/${hostName}/_system
+            builtins.readFile ./hosts/${hostName}/_system
           );
         in
           nixpkgs.lib.nixosSystem {
@@ -38,13 +38,13 @@
               })
 
               # core config
-              ./modules/core/core.nix
+              ./core/core.nix
                             
               # hardware config
-              ./modules/hosts/${hostName}/hardware-configuration.nix
+              ./hosts/${hostName}/hardware-configuration.nix
 
               # per-system config
-              ./modules/hosts/${hostName}/configuration.nix
+              ./hosts/${hostName}/configuration.nix
 
               # home-manager
               home-manager.nixosModules.home-manager

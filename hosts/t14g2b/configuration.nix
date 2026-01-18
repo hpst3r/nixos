@@ -4,10 +4,10 @@
   networking.hostId = "68a20cc5";
 
   imports = [
-    "${self}/modules/desktop/desktop.nix"
-    "${self}/modules/services/monitoring/agents/prometheus-exporter.nix"
-    "${self}/modules/services/monitoring/agents/journald-upload.nix"
-    "${self}/modules/services/virtualization/incus.nix"
+    "${self}/desktop/desktop.nix"
+    "${self}/services/monitoring/agents/prometheus-exporter.nix"
+    "${self}/services/monitoring/agents/journald-upload.nix"
+    "${self}/services/virtualization/incus.nix"
   ];
 
   services.logind.settings.Login = {

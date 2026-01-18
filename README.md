@@ -33,7 +33,7 @@ Core components of the system, imported by `mkHost` (`flake.nix`):
 
 ### modules: applications
 
-Interactive apps for my desktop systems. Imported at the host level (`/modules/hosts`).
+Interactive apps for my desktop systems. Imported at the host level (`./hosts`).
 
 - desktop environment config
 - desktop packages (browser, Spotify, etc)
