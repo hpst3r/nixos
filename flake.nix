@@ -71,6 +71,7 @@
         "e32b"    = mkHost "e32b";
         "e32c"    = mkHost "e32c";
         "e32d"    = mkHost "e32d";
+        "monitor" = mkHost "monitor";
       };
   }; # inputs
 } # nix

@@ -12,6 +12,9 @@
   virtualisation.incus = {
     enable = true;
     preseed = {
+      "config" = {
+        "core.https_address" = ":8443";
+      };
       "networks" = [ {
           "name" = "incusbr0";
           "type" = "bridge";
@@ -30,14 +33,16 @@
         }
       ];
       "profiles" = [ {
-          "config" = {
-            "core.https_address" = ":8443";
-          };
           "description" = "Default Incus profile";
+          "config" = {
+            "limits.cpu" = "4";
+            "limits.memory" = "4GiB";
+          };
           "devices" = {
             "eth0" = {
               "name" = "eth0";
-              "network" = "incusbr0";
+              "nictype" = "bridged";
+              "parent" = "incusbr0";
               "type" = "nic";
             };
             "root" = {
