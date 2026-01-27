@@ -35,4 +35,11 @@
   # prevents "multiple pools with same name" problem during boot
   boot.zfs.devNodes = "/dev/disk/by-partuuid";
 
+  # systemd.network = {
+  #   "10-br0.network" = {
+  #     MatchBridge = "br0";
+  #     DHCP = "yes";
+  #   };
+  # }
+
 }

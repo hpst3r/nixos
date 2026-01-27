@@ -64,7 +64,6 @@
         "z790"    = mkHost "z790";
         "t14g2a"  = mkHost "t14g2a";
         "t14g2b"  = mkHost "t14g2b";
-        "xps9380" = mkHost "xps9380";
         "600g4a"  = mkHost "600g4a";
         "6028a"   = mkHost "6028a";
         "e32a"    = mkHost "e32a";
