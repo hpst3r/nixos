@@ -15,6 +15,9 @@
             "t14g2a:${toString config.services.prometheus.exporters.node.port}"
             "t14g2b:${toString config.services.prometheus.exporters.node.port}"
             "z790:${toString config.services.prometheus.exporters.node.port}"
+            "z2g4a.lab.wporter.org:9100"
+            "z2g4b.lab.wporter.org:9100"
+            "z2g4c.lab.wporter.org:9100"
           ];
         }];
       }
