@@ -16,5 +16,21 @@ in {
       KexAlgorithms = "+diffie-hellman-group14-sha1";
       HostKeyAlgorithms = "+ssh-rsa,ssh-rsa-cert-v01@openssh.com";
     };
+    matchBlocks."3060t0".extraOptions = {
+      KexAlgorithms = "+diffie-hellman-group14-sha1";
+      HostKeyAlgorithms = "+ssh-rsa,ssh-rsa-cert-v01@openssh.com";
+    };
+    matchBlocks."3060t0.lab.wporter.org".extraOptions = {
+      ForwardAgent = "Yes";
+    };
+    matchBlocks."3060t0".extraOptions = {
+      ForwardAgent = "Yes";
+    };
+    matchBlocks."c300.lab.wporter.org".extraOptions = {
+      ForwardAgent = "Yes";
+    };
+    matchBlocks."c300".extraOptions = {
+      ForwardAgent = "Yes";
+    };
   }; # ssh
 }
