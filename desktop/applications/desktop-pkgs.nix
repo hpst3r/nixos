@@ -18,6 +18,7 @@
       drawio
       vscode
       wireshark
+      onlyoffice-desktopeditors
     ];
   };
 
