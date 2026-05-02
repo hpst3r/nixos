@@ -4,7 +4,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    wineWowPackages.stagingFull
+    wineWow64Packages.stagingFull
     winetricks
   ];
 
@@ -17,7 +17,6 @@
       powershell
       drawio
       vscode
-      wireshark
       onlyoffice-desktopeditors
     ];
   };

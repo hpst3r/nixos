@@ -11,6 +11,7 @@
   ];
   virtualisation.incus = {
     enable = true;
+    bucketSupport = false;
     preseed = {
       "config" = {
         "core.https_address" = ":8443";

@@ -10,6 +10,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.zfs.forceImportRoot = false;
 
   fileSystems."/" = {
     device = "zpool/root";
